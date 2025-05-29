@@ -205,7 +205,6 @@ body {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
 
 .news-card:hover {
@@ -745,7 +744,6 @@ footer {
         transform: translateY(0);
     }
 }
-
 
 /* Section Button */
 .section-button {
