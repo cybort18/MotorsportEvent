@@ -378,11 +378,17 @@ footer {
     gap: 2rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    background-color: var(--background-color);
+    padding: 1rem 0;
 }
 
 .filter-group {
     position: relative;
     min-width: 200px;
+    flex: 1;
 }
 
 .filter-label {
@@ -1183,4 +1189,27 @@ footer {
 
 .standings-section:not([style*="display: none"]) {
     opacity: 1;
+}
+
+/* Mobile styles for schedule filters */
+@media (max-width: 768px) {
+    .schedule-filters {
+        position: sticky;
+        top: 80px;
+        z-index: 100;
+        background-color: var(--background-color);
+        padding: 1rem 0;
+        margin: 0 -1rem 2rem;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .filter-group {
+        min-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .filter-group:last-child {
+        margin-bottom: 0;
+    }
 } 
