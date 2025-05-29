@@ -23,11 +23,17 @@
         </div>
     </nav>
 
-    <main style="margin-top: 80px; padding: 2rem 5%;">
-        <h1>Result Standings</h1>
+    <main style="margin-top: 80px; padding: 1rem;">
+        <h1>Hasil Klasemen</h1>
+
+        <div class="series-selector">
+            <button class="series-btn active" data-series="f1">Formula 1</button>
+            <button class="series-btn" data-series="wec">FIA WEC</button>
+            <button class="series-btn" data-series="wrc">WRC</button>
+        </div>
 
         <!-- F1 Driver Standings -->
-        <section class="standings-section">
+        <section class="standings-section" data-series="f1">
             <h2>F1 Driver Standing</h2>
             <div class="standings-table">
                 <table>
@@ -194,7 +200,7 @@
         </section>
 
         <!-- FIA WEC Manufacturer Standings -->
-        <section class="standings-section">
+        <section class="standings-section" data-series="wec" style="display: none;">
             <h2>FIA WEC Manufacturer Standing</h2>
             
             <!-- Hypercar Championship -->
@@ -380,7 +386,7 @@
         </section>
 
         <!-- WRC Championship Standings -->
-        <section class="standings-section">
+        <section class="standings-section" data-series="wrc" style="display: none;">
             <h2>WRC Championship Standing</h2>
             <div class="standings-table">
                 <table>
@@ -556,5 +562,65 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const seriesButtons = document.querySelectorAll('.series-btn');
+            const standingsSections = document.querySelectorAll('.standings-section');
+
+            seriesButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    seriesButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Hide all sections
+                    standingsSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+
+                    // Show selected section
+                    const selectedSeries = button.dataset.series;
+                    document.querySelector(`.standings-section[data-series="${selectedSeries}"]`).style.display = 'block';
+                });
+            });
+
+            // Add touch swipe functionality for tables
+            const tables = document.querySelectorAll('.standings-table');
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            tables.forEach(table => {
+                table.addEventListener('touchstart', e => {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+
+                table.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                });
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchEndX - touchStartX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    const currentIndex = Array.from(seriesButtons).findIndex(btn => btn.classList.contains('active'));
+                    let newIndex;
+
+                    if (diff > 0) {
+                        // Swipe right - go to previous
+                        newIndex = currentIndex > 0 ? currentIndex - 1 : seriesButtons.length - 1;
+                    } else {
+                        // Swipe left - go to next
+                        newIndex = currentIndex < seriesButtons.length - 1 ? currentIndex + 1 : 0;
+                    }
+
+                    seriesButtons[newIndex].click();
+                }
+            }
+        });
+    </script>
 </body>
 </html> 

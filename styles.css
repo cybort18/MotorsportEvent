@@ -1050,4 +1050,137 @@ footer {
 .standings-table tr {
     animation: fadeInRow 0.3s ease forwards;
     animation-delay: calc(var(--row-index) * 0.1s);
+}
+
+/* Series Selector Styles */
+.series-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.series-selector::-webkit-scrollbar {
+    display: none;
+}
+
+.series-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.series-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Standings Table Mobile Styles */
+@media (max-width: 768px) {
+    .standings-section {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .standings-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .standings-section h3 {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+    }
+
+    .standings-table {
+        padding: 0.5rem;
+        margin: 0 -1rem;
+        width: calc(100% + 2rem);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .standings-table table {
+        min-width: 600px;
+    }
+
+    .standings-table th,
+    .standings-table td {
+        padding: 0.8rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .standings-table th:first-child,
+    .standings-table td:first-child {
+        position: sticky;
+        left: 0;
+        background: var(--secondary-color);
+        z-index: 1;
+    }
+
+    .standings-table th:first-child {
+        background: var(--primary-color);
+    }
+
+    .standings-table td:last-child {
+        position: sticky;
+        right: 0;
+        background: var(--secondary-color);
+        z-index: 1;
+    }
+
+    /* Improve touch targets */
+    .standings-table tr {
+        cursor: pointer;
+    }
+
+    .standings-table tr:active {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Add visual feedback for swipe */
+    .standings-table::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 20px;
+        background: linear-gradient(to right, transparent, var(--secondary-color));
+        pointer-events: none;
+    }
+
+    .standings-table::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 20px;
+        background: linear-gradient(to left, transparent, var(--secondary-color));
+        pointer-events: none;
+    }
+}
+
+/* Add smooth transitions */
+.standings-section {
+    transition: opacity 0.3s ease;
+}
+
+.standings-section[style*="display: none"] {
+    opacity: 0;
+}
+
+.standings-section:not([style*="display: none"]) {
+    opacity: 1;
 } 
