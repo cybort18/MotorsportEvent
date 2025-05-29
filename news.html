@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita - Motorsport Event</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Motorsport Event</div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="schedule.html">Jadwal Balapan</a>
+            <a href="standings.html">Hasil Klasemen</a>
+            <a href="news.html" class="active">Berita</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main style="margin-top: 80px; padding: 2rem 5%;">
+        <h1>Berita Terkini</h1>
+
+        <div class="news-categories">
+            <button class="category-btn active" data-category="all">Semua</button>
+            <button class="category-btn" data-category="f1">Formula 1</button>
+            <button class="category-btn" data-category="wec">FIA WEC</button>
+            <button class="category-btn" data-category="wrc">WRC</button>
+        </div>
+
+        <div class="news-grid">
+            <!-- F1 News -->
+            <article class="news-card" data-category="f1">
+                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_960,q_auto/f_auto/q_auto/fom-website/2025/Monaco/Formula%201%20header%20templates%20-%202025-05-25T202128.636" alt="F1 News">
+                <div class="news-content">
+                    <span class="news-category">Formula 1</span>
+                    <h3>INFORMASI MONACO: Semua momen penting saat Norris mewujudkan mimpinya</h3>
+                    <p class="news-date">25 Mei 2025</p>
+                    <p>Kunjungan terakhir Formula 1 ke salah satu tempat paling bersejarah di kalender tidak mengecewakan, karena Monaco menghadirkan akhir pekan penuh aksi yang menegangkan...</p>
+                    <a href="https://www.formula1.com/en/latest/article/monaco-lowdown-all-the-key-moments-as-norris-realises-a-dream-racing-bulls.7qjzcIX1UDPEcfS2becizq" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="f1">
+                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_960,q_auto/f_auto/q_auto/fom-website/2025/Monaco/Copy%20of%20Formula%201%20header%20template%20(3)" alt="F1 News">
+                <div class="news-content">
+                    <span class="news-category">Formula 1</span>
+                    <h3>Wolff ungkapkan bos Williams Vowles mengiriminya pesan permintaan maaf selama GP Monaco</h3>
+                    <p class="news-date">27 Mei 2024</p>
+                    <p>Toto Wolff terpaksa menyaksikan Grand Prix yang sulit di Monaco, di mana kedua pembalapnya terjebak di belakang mobil Williams yang menggunakan taktik tim untuk kepentingan mereka sendiri...</p>
+                    <a href="https://www.formula1.com/en/latest/article/wolff-reveals-williams-boss-vowles-sent-him-an-apology-text-during-monaco-gp.6Ql1QI6ZNBGUhuVc7FYq89" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <!-- WEC News -->
+            <article class="news-card" data-category="wec">
+                <img src="https://www.fiawec.com/media/cache/resolve/hero_desktop/umbrella_media/693081-682df24ddc33d666147347.jpg" alt="WEC News">
+                <div class="news-content">
+                    <span class="news-category">FIA WEC</span>
+                    <h3>Usaha Hypercar Genesis 'lebih dari sekadar inisiatif pemasaran'</h3>
+                    <p class="news-date">21 Mei 2025</p>
+                    <p>Saat Genesis meningkatkan persiapannya menuju debut Kejuaraan Ketahanan Dunia FIA dalam kategori Hypercar utama seri tersebut pada tahun 2026, Kepala Petugas Kreatif Luc Donckerwolke telah memberikan wawasan tentang 'makna budaya yang kuat' yang mendasari langkah tersebut.</p>
+                    <a href="https://www.fiawec.com/en/news/genesis-hypercar-venture-more-than-a-marketing-initiative/8324" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="wec">
+                <img src="https://www.fiawec.com/media/cache/resolve/hero_desktop/umbrella_media/dppiproduction-00002363-0056-6822047aa4221991968634.jpg" alt="WEC News">
+                <div class="news-content">
+                    <span class="news-category">FIA WEC</span>
+                    <h3>Usaha Hypercar Genesis 'lebih dari sekadar inisiatif pemasaran'</h3>
+                    <p class="news-date">21 Mei 2025</p>
+                    <p>Saat Genesis meningkatkan persiapannya menuju debut Kejuaraan Ketahanan Dunia FIA dalam kategori Hypercar utama seri tersebut pada tahun 2026, Kepala Petugas Kreatif Luc Donckerwolke telah memberikan wawasan tentang 'makna budaya yang kuat' yang mendasari langkah tersebut.</p>
+                    <a href="https://www.fiawec.com/en/news/genesis-hypercar-project-more-than-just-marketing-initiative/693081" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <!-- WRC News -->
+            <article class="news-card" data-category="wrc">
+                <img src="https://img.redbull.com/images/c_crop,x_0,y_740,h_2250,w_5000/c_fill,w_1700,h_765/q_auto,f_jpg/redbullcom/2025/5/23/cmemerikwzb0hrnjiy1h/mcerlean" alt="WRC News">
+                <div class="news-content">
+                    <span class="news-category">WRC</span>
+                    <h3>Performa Portugal menjadi pendorong kepercayaan diri bagi pendatang baru McErlean</h3>
+                    <p class="news-date">23 Mei 2025</p>
+                    <p>Menyamai dan mengalahkan rival-rivalnya di Rally1 di Vodafone Rally De Portugal telah memberikan Josh McErlean dorongan kepercayaan diri bahwa pembalap M-Sport Ford itu layak berada di tingkatan teratas WRC.</p>
+                    <a href="https://www.wrc.com/en/news/portugal-performance-a-confidence-boost-for-rising-rookie-mcerlean" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="wrc">
+                <img src="https://via.placeholder.com/400x250" alt="WRC News">
+                <div class="news-content">
+                    <span class="news-category">WRC</span>
+                    <h3>Hyundai Umumkan Line-up 2025</h3>
+                    <p class="news-date">24 Mei 2024</p>
+                    <p>Hyundai Motorsport mengumumkan line-up pembalap mereka untuk musim 2025 dengan beberapa perubahan...</p>
+                    <a href="https://www.wrc.com/en/news/2025/hyundai-announces-2025-driver-line-up/" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="wrc">
+                <img src="https://via.placeholder.com/400x250" alt="WRC News">
+                <div class="news-content">
+                    <span class="news-category">WRC</span>
+                    <h3>Toyota Umumkan Line-up 2025</h3>
+                    <p class="news-date">24 Mei 2024</p>
+                    <p>Toyota Motorsport mengumumkan line-up pembalap mereka untuk musim 2025 dengan beberapa perubahan...</p>
+                    <a href="https://www.wrc.com/en/news/2025/hyundai-announces-2025-driver-line-up/" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <!-- New F1 News -->
+            <article class="news-card" data-category="f1">
+                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_960,q_auto/f_auto/q_auto/fom-website/2025/Spain/Formula%201%20header%20templates%20-%202025-06-01T202128.636" alt="F1 News">
+                <div class="news-content">
+                    <span class="news-category">Formula 1</span>
+                    <h3>Horner Jelaskan Alasan Red Bull 'Mengambil Risiko' dengan Strategi Verstappen di Monaco</h3>
+                    <p class="news-date">28 Mei 2025</p>
+                    <p>Christian Horner menjelaskan mengapa Red Bull memutuskan untuk mengambil risiko dengan strategi pit stop ganda untuk Max Verstappen di Grand Prix Monaco...</p>
+                    <a href="https://www.formula1.com/en/latest/article/horner-explains-why-red-bull-rolled-the-dice-with-verstappen-strategy-in-monaco" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <!-- New WEC News -->
+            <article class="news-card" data-category="wec">
+                <img src="https://www.fiawec.com/media/cache/resolve/hero_desktop/umbrella_media/693082-682df24ddc33d666147348.jpg" alt="WEC News">
+                <div class="news-content">
+                    <span class="news-category">FIA WEC</span>
+                    <h3>Peugeot Puas Setelah Duval dan di Resta Berjaya di Spa</h3>
+                    <p class="news-date">29 Mei 2025</p>
+                    <p>Tim Peugeot mengambil banyak hal positif setelah performa mengesankan dari Loic Duval dan Paul di Resta di 6 Hours of Spa-Francorchamps...</p>
+                    <a href="https://www.fiawec.com/en/news/peugeot-takes-positives-after-duval-and-di-resta-star-at-spa/693082" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <!-- New WRC News -->
+            <article class="news-card" data-category="wrc">
+                <img src="https://img.redbull.com/images/c_crop,x_0,y_740,h_2250,w_5000/c_fill,w_1700,h_765/q_auto,f_jpg/redbullcom/2025/5/30/cmemerikwzb0hrnjiy1h/rovanpera" alt="WRC News">
+                <div class="news-content">
+                    <span class="news-category">WRC</span>
+                    <h3>Rovanperä: Perburuan Gelar Ketiga Menuju Arah yang Benar</h3>
+                    <p class="news-date">30 Mei 2025</p>
+                    <p>Kalle Rovanperä mengatakan perburuannya untuk gelar WRC ketiga sedang menuju arah yang benar setelah awal musim yang menantang...</p>
+                    <a href="https://www.wrc.com/en/news/2025/rovanperas-title-push-heading-in-right-direction-after-portugal-podium/" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+
+            <!-- New F1 News -->
+            <article class="news-card" data-category="f1">
+                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_960,q_auto/f_auto/q_auto/fom-website/2025/Spain/Formula%201%20header%20templates%20-%202025-06-02T202128.636" alt="F1 News">
+                <div class="news-content">
+                    <span class="news-category">Formula 1</span>
+                    <h3>PepsiCo Diumumkan Sebagai Partner Resmi Formula 1</h3>
+                    <p class="news-date">31 Mei 2025</p>
+                    <p>Formula 1 mengumumkan PepsiCo sebagai Partner Resmi baru, memperkuat komitmen olahraga dalam menjalin kemitraan global...</p>
+                    <a href="https://www.formula1.com/en/latest/article/pepsico-announced-as-official-partner-of-formula-1" target="_blank" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="pagination">
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">Next</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Motorsport Event</h3>
+                <p>Portal berita dan informasi motorsport terpercaya</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="schedule.html">Jadwal</a></li>
+                    <li><a href="standings.html">Klasemen</a></li>
+                    <li><a href="news.html">Berita</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Motorsport Event. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // News Category Filtering
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const newsCards = document.querySelectorAll('.news-card');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    const category = button.getAttribute('data-category');
+
+                    newsCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.5s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Pagination
+            const paginationButtons = document.querySelectorAll('.pagination-btn');
+            paginationButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    paginationButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

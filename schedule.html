@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Balapan - Motorsport Event</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Motorsport Event</div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="schedule.html" class="active">Jadwal Balapan</a>
+            <a href="standings.html">Hasil Klasemen</a>
+            <a href="news.html">Berita</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main style="margin-top: 80px; padding: 2rem 5%;">
+        <h1>Jadwal Balapan</h1>
+
+        <div class="schedule-filters">
+            <div class="filter-group">
+                <label class="filter-label">Status</label>
+                <select class="filter-select" id="statusFilter">
+                    <option value="all">Semua Status</option>
+                    <option value="completed">Completed</option>
+                    <option value="live">Live</option>
+                    <option value="upcoming">Upcoming</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Seri</label>
+                <select class="filter-select" id="seriesFilter">
+                    <option value="all">Semua Seri</option>
+                    <option value="f1">Formula 1</option>
+                    <option value="wec">FIA WEC</option>
+                    <option value="wrc">WRC</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- F1 Schedule -->
+        <section class="schedule-section" data-series="f1">
+            <h2>Formula 1</h2>
+            <div class="schedule-grid">
+                <a href="https://f1tv.formula1.com/page/10540/formula-1-louis-vuitton-australian-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">14-16 Maret 2025</div>
+                    <h3>Rolex Australian Grand Prix 2025</h3>
+                    <p>Albert Park Circuit</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Lando Norris (McLaren-Mercedes)</div>
+                    </div>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10538/formula-1-heineken-chinese-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">21-23 Maret 2025</div>
+                    <h3>Heineken Chinese Grand Prix 2025</h3>
+                    <p>Shanghai International Circuit</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Oscar Piastri (McLaren-Mercedes)</div>
+                    </div>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10536/formula-1-lenovo-japanese-grand-prix-2025-" class="schedule-card" target="_blank">
+                    <div class="date">4-6 April 2025</div>
+                    <h3>Lenovo Japanese Grand Prix 2025</h3>
+                    <p>Suzuka International Racing Course</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Max Verstappen (Red Bull Racing-Honda RBPT)</div>
+                    </div>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10534/formula-1-gulf-air-bahrain-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">11-13 April 2025</div>
+                    <h3>Gulf Air Bahrain Grand Prix 2025</h3>
+                    <p>Bahrain International Circuit</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Oscar Piastri (McLaren-Mercedes)</div>
+                    </div>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10532/formula-1-stc-saudi-arabian-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">18-20 April 2025</div>
+                    <h3>STC Saudi Arabian Grand Prix 2025</h3>
+                    <p>Jeddah Corniche Circuit</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Oscar Piastri (McLaren-Mercedes)</div>
+                    </div>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10530/formula-1-crypto-com-miami-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">2-4 Mei 2025</div>
+                    <h3>Crypto.com Miami Grand Prix 2025</h3>
+                    <p>Miami International Autodrome</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Oscar Piastri (McLaren-Mercedes)</div>
+                    </div>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10528/formula-1-aws-gran-premio-del-made-in-italy-e-dell-emilia-romagna-2025" class="schedule-card" target="_blank">
+                    <div class="date">16-18 Mei 2025</div>
+                    <h3>AWS Gran Premio del Made in Italy e dell'Emilia-Romagna 2025</h3>
+                    <p>Autodromo Enzo e Dino Ferrari (Imola)</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Max Verstappen (Red Bull Racing-Honda RBPT)</div>
+                    </div>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10526/formula-1-tag-heuer-grand-prix-de-monaco-2025" class="schedule-card" target="_blank">
+                    <div class="date">23-25 Mei 2025</div>
+                    <h3>Grand Prix de Monaco 2025</h3>
+                    <p>Circuit de Monaco</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Lando Norris (McLaren-Mercedes)</div>
+                    </div>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10524/formula-1-aramco-gran-premio-de-espana-2025" class="schedule-card" target="_blank">
+                    <div class="date">30 Mei - 1 Juni 2025</div>
+                    <h3>Aramco Gran Premio de España 2025</h3>
+                    <p>Circuit de Barcelona-Catalunya</p>
+                    <span class="status live">LIVE</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10522/formula-1-pirelli-grand-prix-du-canada-2025" class="schedule-card" target="_blank">
+                    <div class="date">13 - 15 Juni 2025</div>
+                    <h3>Pirelli Grand Prix du Canada 2025</h3>
+                    <p>Circuit Gilles Villeneuve</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10520/formula-1-msc-cruises-austrian-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">27-29 Juni 2025</div>
+                    <h3>MSC Cruises Austrian Grand Prix 2025</h3>
+                    <p>Red Bull Ring</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10518/formula-1-qatar-airways-british-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">4-6 Juli 2025</div>
+                    <h3>Qatar Airways British Grand Prix 2025</h3>
+                    <p>Silverstone Circuit</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10516/formula-1-moet-chandon-belgian-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">25-27 Juli 2025</div>
+                    <h3>Moët & Chandon Belgian Grand Prix 2025</h3>
+                    <p>Circuit de Spa-Francorchamps</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10514/formula-1-lenovo-hungarian-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">1-3 Agustus 2025</div>
+                    <h3>Lenovo Hungarian Grand Prix 2025</h3>
+                    <p>Hungaroring</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10511/formula-1-heineken-dutch-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">29-31 Agustus 2025</div>
+                    <h3>Heineken Dutch Grand Prix 2025</h3>
+                    <p>Circuit Zandvoort</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10509/formula-1-pirelli-gran-premio-d-italia-2025" class="schedule-card" target="_blank">
+                    <div class="date">5-7 September 2025</div>
+                    <h3>Pirelli Gran Premio d'Italia 2025</h3>
+                    <p>Autodromo Nazionale Monza</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10507/formula-1-qatar-airways-azerbaijan-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">19-21 September 2025</div>
+                    <h3>Qatar Airways Azerbaijan Grand Prix 2025</h3>
+                    <p>Baku City Circuit</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10504/formula-1-singapore-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">3-5 Oktober 2025</div>
+                    <h3>Singapore Airlines Singapore Grand Prix 2025</h3>
+                    <p>Marina Bay Street Circuit</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10502/formula-1-msc-cruises-united-states-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">17-19 Oktober 2025</div>
+                    <h3>MSC Cruises United States Grand Prix 2025</h3>
+                    <p>Circuit of the Americas</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10500/formula-1-gran-premio-de-la-ciudad-de-mexico-2025" class="schedule-card" target="_blank">
+                    <div class="date">24-26 Oktober 2025</div>
+                    <h3>Gran Premio de la Ciudad de México 2025</h3>
+                    <p>Autódromo Hermanos Rodríguez</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10498/formula-1-msc-cruises-grande-premio-de-sao-paulo-2025" class="schedule-card" target="_blank">
+                    <div class="date">7-9 November 2025</div>
+                    <h3>MSC Cruises Grande Prêmio de São Paulo 2025</h3>
+                    <p>Interlagos Circuit</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10496/formula-1-heineken-silver-las-vegas-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">20-22 November 2025</div>
+                    <h3>Heineken Las Vegas Grand Prix 2025</h3>
+                    <p>Las Vegas Street Circuit</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10494/formula-1-qatar-airways-qatar-grand-prix-2025" class="schedule-card" target="_blank">
+                    <div class="date">28-30 November 2025</div>
+                    <h3>Qatar Airways Qatar Grand Prix 2025</h3>
+                    <p>Lusail International Circuit</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://f1tv.formula1.com/page/10492/formula-1-etihad-airways-abu-dhabi-grand-prix-2025-" class="schedule-card" target="_blank">
+                    <div class="date">5-7 Desember 2025</div>
+                    <h3>Etihad Airways Abu Dhabi Grand Prix 2025</h3>
+                    <p>Yas Marina Circuit</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- WEC Schedule -->
+        <section class="schedule-section" data-series="wec">
+            <h2>FIA WEC</h2>
+            <div class="schedule-grid">
+                <a href="https://fiawec.tv/page/67977d32e67beb29b324e1a1" class="schedule-card" target="_blank">
+                    <div class="date">28 Februari 2025</div>
+                    <h3>Qatar 1812 km</h3>
+                    <p>Losail International Circuit</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Hypercar Winner</div>
+                        <div class="winner-name">#50 Ferrari 499P - Ferrari AF Corse</div>
+                        <div class="winner-label" style="margin-top: 0.5rem;">LMGT3 Winner</div>
+                        <div class="winner-name">#33 Corvette Z06 LMGT3.R - TF Sport</div>
+                    </div>
+                </a>
+                <a href="https://fiawec.tv/page/6798eb9a226b5375ae2d62e9" class="schedule-card" target="_blank">
+                    <div class="date">20 April 2025</div>
+                    <h3>6 Hours of Imola</h3>
+                    <p>Imola Circuit</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Hypercar Winner</div>
+                        <div class="winner-name">#51 Ferrari 499P - Ferrari AF Corse</div>
+                        <div class="winner-label" style="margin-top: 0.5rem;">LMGT3 Winner</div>
+                        <div class="winner-name">#54 Ferrari 296 GT3 - Vista AF Corse</div>
+                    </div>
+                </a>
+                <a href="https://fiawec.tv/page/6798ec86226b5375ae2d63e3" class="schedule-card" target="_blank">
+                    <div class="date">10 Mei 2025</div>
+                    <h3>TotalEnergies 6 Hours of Spa-Francorchamps</h3>
+                    <p>Circuit de Spa-Francorchamps</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Hypercar Winner</div>
+                        <div class="winner-name">#51 Ferrari 499P - Ferrari AF Corse</div>
+                        <div class="winner-label" style="margin-top: 0.5rem;">LMGT3 Winner</div>
+                        <div class="winner-name">#54 Ferrari 296 GT3 - Vista AF Corse</div>
+                    </div>
+                </a>
+                <a href="https://fiawec.tv/page/65c38e61070ee672bcb148aa" class="schedule-card" target="_blank">
+                    <div class="date">14 - 15 Juni 2025</div>
+                    <h3>24 Hours of Le Mans</h3>
+                    <p>Circuit de la Sarthe</p>
+                    <span class="status live">LIVE</span>
+                </a>
+                <a href="https://fiawec.tv/page/6798fafdd4c82b61ed5a247c" class="schedule-card" target="_blank">
+                    <div class="date">13 Juli 2025</div>
+                    <h3>Rolex 6 Hours of São Paulo</h3>
+                    <p>Autódromo José Carlos Pace</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://fiawec.tv/page/6798fb7c226b5375ae2d70c0" class="schedule-card" target="_blank">
+                    <div class="date">7 September 2025</div>
+                    <h3>Lone Star Le Mans</h3>
+                    <p>Circuit of the Americas</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://fiawec.tv/page/6798fc5d226b5375ae2d72bf" class="schedule-card" target="_blank">
+                    <div class="date">28 September 2025</div>
+                    <h3>6 Hours of Fuji</h3>
+                    <p>Fuji Speedway</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://fiawec.tv/page/6798fd4dcb7b174be7266419" class="schedule-card" target="_blank">
+                    <div class="date">8 November 2025</div>
+                    <h3>Bapco Energies 8 Hours of Bahrain</h3>
+                    <p>Bahrain International Circuit</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- WRC Schedule -->
+        <section class="schedule-section" data-series="wrc">
+            <h2>WRC</h2>
+            <div class="schedule-grid">
+                <a href="https://www.wrc.com/en/event/monte-carlo" class="schedule-card" target="_blank">
+                    <div class="date">25-28 Januari 2024</div>
+                    <h3>Rallye Monte-Carlo</h3>
+                    <p>Monte Carlo, Monaco</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Thierry Neuville (Hyundai)</div>
+                    </div>
+                </a>
+                <a href="https://www.wrc.com/en/event/sweden" class="schedule-card" target="_blank">
+                    <div class="date">15-18 Februari 2024</div>
+                    <h3>Rally Sweden</h3>
+                    <p>Umeå, Sweden</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Elfyn Evans (Toyota)</div>
+                    </div>
+                </a>
+                <a href="https://www.wrc.com/en/event/kenya" class="schedule-card" target="_blank">
+                    <div class="date">28-31 Maret 2024</div>
+                    <h3>Safari Rally Kenya</h3>
+                    <p>Nairobi, Kenya</p>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Kalle Rovanperä (Toyota)</div>
+                    </div>
+                </a>
+                <a href="https://www.wrc.com/en/event/italy" class="schedule-card" target="_blank">
+                    <div class="date">1-4 Juni 2024</div>
+                    <h3>Rally Italia Sardegna</h3>
+                    <p>Sardinia, Italy</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://www.wrc.com/en/event/poland" class="schedule-card" target="_blank">
+                    <div class="date">22-25 Juni 2024</div>
+                    <h3>Rally Poland</h3>
+                    <p>Mikolajki, Poland</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://www.wrc.com/en/event/latvia" class="schedule-card" target="_blank">
+                    <div class="date">18-21 Juli 2024</div>
+                    <h3>Rally Latvia</h3>
+                    <p>Riga, Latvia</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://www.wrc.com/en/event/finland" class="schedule-card" target="_blank">
+                    <div class="date">1-4 Agustus 2024</div>
+                    <h3>Rally Finland</h3>
+                    <p>Jyväskylä, Finland</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+                <a href="https://www.wrc.com/en/event/greece" class="schedule-card" target="_blank">
+                    <div class="date">5-8 September 2024</div>
+                    <h3>Acropolis Rally Greece</h3>
+                    <p>Lamia, Greece</p>
+                    <span class="status upcoming">Upcoming</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Motorsport Event</h3>
+                <p>Portal berita dan informasi motorsport terpercaya</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="schedule.html">Jadwal</a></li>
+                    <li><a href="standings.html">Klasemen</a></li>
+                    <li><a href="news.html">Berita</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Motorsport Event. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusFilter = document.getElementById('statusFilter');
+            const seriesFilter = document.getElementById('seriesFilter');
+            const scheduleCards = document.querySelectorAll('.schedule-card');
+            const scheduleSections = document.querySelectorAll('.schedule-section');
+
+            function updateFilters() {
+                const activeStatusFilter = statusFilter.value;
+                const activeSeriesFilter = seriesFilter.value;
+
+                // Update schedule sections visibility
+                scheduleSections.forEach(section => {
+                    if (activeSeriesFilter === 'all' || section.dataset.series === activeSeriesFilter) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+
+                // Update schedule cards visibility
+                scheduleCards.forEach(card => {
+                    const status = card.querySelector('.status').classList.contains('completed') ? 'completed' :
+                                 card.querySelector('.status').classList.contains('live') ? 'live' : 'upcoming';
+                    const series = card.closest('.schedule-section').dataset.series;
+
+                    const statusMatch = activeStatusFilter === 'all' || status === activeStatusFilter;
+                    const seriesMatch = activeSeriesFilter === 'all' || series === activeSeriesFilter;
+
+                    if (statusMatch && seriesMatch) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Add change event listeners to filter selects
+            statusFilter.addEventListener('change', updateFilters);
+            seriesFilter.addEventListener('change', updateFilters);
+        });
+    </script>
+</body>
+</html> 
