@@ -902,6 +902,8 @@ footer {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     padding: 2rem;
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .standings-section:hover {
@@ -1096,24 +1098,36 @@ footer {
     .standings-section {
         padding: 1rem;
         margin: 0.5rem 0;
+        overflow: visible;
     }
 
     .standings-section h2 {
         font-size: 1.3rem;
         margin-bottom: 1rem;
+        position: sticky;
+        top: 80px;
+        z-index: 100;
+        background-color: var(--card-bg);
+        padding: 1rem 0;
     }
 
     .standings-section h3 {
         font-size: 1.1rem;
         margin: 1rem 0;
+        position: sticky;
+        top: 140px;
+        z-index: 100;
+        background-color: var(--card-bg);
+        padding: 1rem 0;
     }
 
     .standings-table {
         padding: 0.5rem;
-        margin: 0 -1rem;
-        width: calc(100% + 2rem);
+        margin: 0;
+        width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        position: relative;
     }
 
     .standings-table table {
@@ -1130,51 +1144,8 @@ footer {
     .standings-table td:first-child {
         position: sticky;
         left: 0;
-        background: var(--secondary-color);
+        background-color: var(--secondary-color);
         z-index: 1;
-    }
-
-    .standings-table th:first-child {
-        background: var(--primary-color);
-    }
-
-    .standings-table td:last-child {
-        position: sticky;
-        right: 0;
-        background: var(--secondary-color);
-        z-index: 1;
-    }
-
-    /* Improve touch targets */
-    .standings-table tr {
-        cursor: pointer;
-    }
-
-    .standings-table tr:active {
-        background-color: rgba(255, 255, 255, 0.15);
-    }
-
-    /* Add visual feedback for swipe */
-    .standings-table::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 20px;
-        background: linear-gradient(to right, transparent, var(--secondary-color));
-        pointer-events: none;
-    }
-
-    .standings-table::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 20px;
-        background: linear-gradient(to left, transparent, var(--secondary-color));
-        pointer-events: none;
     }
 }
 
