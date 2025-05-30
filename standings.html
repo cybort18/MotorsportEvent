@@ -27,9 +27,11 @@
         <h1>Hasil Klasemen</h1>
 
         <div class="series-selector">
-            <button class="series-btn active" data-series="f1">Formula 1</button>
-            <button class="series-btn" data-series="wec">FIA WEC</button>
-            <button class="series-btn" data-series="wrc">WRC</button>
+            <select id="seriesSelect" class="series-dropdown">
+                <option value="f1">Formula 1</option>
+                <option value="wec">FIA WEC</option>
+                <option value="wrc">WRC</option>
+            </select>
         </div>
 
         <!-- F1 Driver Standings -->
@@ -564,25 +566,18 @@
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const seriesButtons = document.querySelectorAll('.series-btn');
+            const seriesSelect = document.getElementById('seriesSelect');
             const standingsSections = document.querySelectorAll('.standings-section');
 
-            seriesButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    seriesButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    button.classList.add('active');
-
-                    // Hide all sections
-                    standingsSections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-
-                    // Show selected section
-                    const selectedSeries = button.dataset.series;
-                    document.querySelector(`.standings-section[data-series="${selectedSeries}"]`).style.display = 'block';
+            seriesSelect.addEventListener('change', () => {
+                // Hide all sections
+                standingsSections.forEach(section => {
+                    section.style.display = 'none';
                 });
+
+                // Show selected section
+                const selectedSeries = seriesSelect.value;
+                document.querySelector(`.standings-section[data-series="${selectedSeries}"]`).style.display = 'block';
             });
 
             // Add touch swipe functionality for tables
@@ -606,18 +601,21 @@
                 const diff = touchEndX - touchStartX;
 
                 if (Math.abs(diff) > swipeThreshold) {
-                    const currentIndex = Array.from(seriesButtons).findIndex(btn => btn.classList.contains('active'));
+                    const currentValue = seriesSelect.value;
+                    const options = Array.from(seriesSelect.options);
+                    const currentIndex = options.findIndex(option => option.value === currentValue);
                     let newIndex;
 
                     if (diff > 0) {
                         // Swipe right - go to previous
-                        newIndex = currentIndex > 0 ? currentIndex - 1 : seriesButtons.length - 1;
+                        newIndex = currentIndex > 0 ? currentIndex - 1 : options.length - 1;
                     } else {
                         // Swipe left - go to next
-                        newIndex = currentIndex < seriesButtons.length - 1 ? currentIndex + 1 : 0;
+                        newIndex = currentIndex < options.length - 1 ? currentIndex + 1 : 0;
                     }
 
-                    seriesButtons[newIndex].click();
+                    seriesSelect.value = options[newIndex].value;
+                    seriesSelect.dispatchEvent(new Event('change'));
                 }
             }
         });
