@@ -135,7 +135,7 @@
                     <div class="date">30 Mei - 1 Juni 2025</div>
                     <h3>Aramco Gran Premio de España 2025</h3>
                     <p>Circuit de Barcelona-Catalunya</p>
-                    <span class="status live">LIVE</span>
+                    <span class="status completed">completed</span>
                 </a>
                 <a href="https://f1tv.formula1.com/page/10522/formula-1-pirelli-grand-prix-du-canada-2025" class="schedule-card" target="_blank">
                     <div class="date">13 - 15 Juni 2025</div>
@@ -274,7 +274,7 @@
                     <div class="date">14 - 15 Juni 2025</div>
                     <h3>24 Hours of Le Mans</h3>
                     <p>Circuit de la Sarthe</p>
-                    <span class="status live">LIVE</span>
+                    <span class="status upcoming">Upcoming</span>
                 </a>
                 <a href="https://fiawec.tv/page/6798fafdd4c82b61ed5a247c" class="schedule-card" target="_blank">
                     <div class="date">13 Juli 2025</div>
@@ -311,31 +311,51 @@
                     <div class="date">23-26 Januari 2025</div>
                     <h3>Rallye Monte-Carlo</h3>
                     <p>Monaco</p>
-                    <span class="status upcoming">Upcoming</span>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Sébastien OGIER & Vincent LANDAIS (Toyota)</div>
+                    </div>
                 </a>
                 <a href="https://www.wrc.com/en/events/wrc-rally-sweden-2025" class="schedule-card" target="_blank">
                     <div class="date">13-16 Februari 2025</div>
                     <h3>Rally Sweden</h3>
                     <p>Sweden</p>
-                    <span class="status upcoming">Upcoming</span>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Elfyn EVANS & Scott MARTIN (Toyota)</div>
+                    </div>
                 </a>
                 <a href="https://www.wrc.com/en/events/wrc-safari-rally-kenya-2025" class="schedule-card" target="_blank">
                     <div class="date">20-23 Maret 2025</div>
                     <h3>Safari Rally Kenya</h3>
                     <p>Kenya</p>
-                    <span class="status upcoming">Upcoming</span>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Elfyn EVANS & Scott MARTIN (Toyota)</div>
+                    </div>
                 </a>
                 <a href="https://www.wrc.com/en/events/wrc-rally-islas-canarias-2025" class="schedule-card" target="_blank">
                     <div class="date">24-27 April 2025</div>
                     <h3>Rally Islas Canarias</h3>
                     <p>Spain</p>
-                    <span class="status upcoming">Upcoming</span>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Kalle ROVANPERÄ & Jonne HALTTUNEN (Hyundai)</div>
+                    </div>
                 </a>
                 <a href="https://www.wrc.com/en/events/wrc-vodafone-rally-de-portugal-2025" class="schedule-card" target="_blank">
                     <div class="date">15-18 Mei 2025</div>
                     <h3>Vodafone Rally de Portugal</h3>
                     <p>Portugal</p>
-                    <span class="status upcoming">Upcoming</span>
+                    <span class="status completed">Completed</span>
+                    <div class="winner-info">
+                        <div class="winner-label">Winner</div>
+                        <div class="winner-name">Sébastien Ogier & Vincent Landais (Toyota)</div>
+                    </div>
                 </a>
                 <a href="https://www.wrc.com/en/events/wrc-rally-italia-sardegna-2025" class="schedule-card" target="_blank">
                     <div class="date">05-08 Juni 2025</div>
@@ -432,85 +452,6 @@
             const scheduleCards = document.querySelectorAll('.schedule-card');
             const scheduleSections = document.querySelectorAll('.schedule-section');
 
-            // Function to parse date string to Date object
-            function parseDate(dateStr) {
-                const months = {
-                    'Januari': 0, 'Februari': 1, 'Maret': 2, 'April': 3, 'Mei': 4, 'Juni': 5,
-                    'Juli': 6, 'Agustus': 7, 'September': 8, 'Oktober': 9, 'November': 10, 'Desember': 11
-                };
-                
-                const parts = dateStr.split(' ');
-                if (parts.length === 3) {
-                    // Single date format (e.g., "28 Februari 2025")
-                    const day = parseInt(parts[0]);
-                    const month = months[parts[1]];
-                    const year = parseInt(parts[2]);
-                    return new Date(year, month, day);
-                } else if (parts.length === 5) {
-                    // Date range format (e.g., "23-26 Januari 2025")
-                    const [startDay, endDay] = parts[0].split('-').map(Number);
-                    const month = months[parts[1]];
-                    const year = parseInt(parts[2]);
-                    return {
-                        start: new Date(year, month, startDay),
-                        end: new Date(year, month, endDay)
-                    };
-                }
-                return null;
-            }
-
-            // Function to update race status based on current date
-            function updateRaceStatus() {
-                const now = new Date();
-                scheduleCards.forEach(card => {
-                    const dateElement = card.querySelector('.date');
-                    const statusElement = card.querySelector('.status');
-                    const winnerInfo = card.querySelector('.winner-info');
-                    
-                    if (!dateElement || !statusElement) return;
-
-                    const dateInfo = parseDate(dateElement.textContent);
-                    if (!dateInfo) return;
-
-                    let status;
-                    if (dateInfo instanceof Date) {
-                        // Single day event
-                        const eventDate = dateInfo;
-                        const dayDiff = Math.floor((eventDate - now) / (1000 * 60 * 60 * 24));
-                        
-                        if (dayDiff < 0) {
-                            status = 'completed';
-                        } else if (dayDiff === 0) {
-                            status = 'live';
-                        } else {
-                            status = 'upcoming';
-                        }
-                    } else {
-                        // Multi-day event
-                        const { start, end } = dateInfo;
-                        const startDiff = Math.floor((start - now) / (1000 * 60 * 60 * 24));
-                        const endDiff = Math.floor((end - now) / (1000 * 60 * 60 * 24));
-                        
-                        if (endDiff < 0) {
-                            status = 'completed';
-                        } else if (startDiff <= 0 && endDiff >= 0) {
-                            status = 'live';
-                        } else {
-                            status = 'upcoming';
-                        }
-                    }
-
-                    // Update status class and text
-                    statusElement.className = 'status ' + status;
-                    statusElement.textContent = status.charAt(0).toUpperCase() + status.slice(1);
-
-                    // Show/hide winner info based on status
-                    if (winnerInfo) {
-                        winnerInfo.style.display = status === 'completed' ? 'block' : 'none';
-                    }
-                });
-            }
-
             function updateFilters() {
                 const activeStatusFilter = statusFilter.value;
                 const activeSeriesFilter = seriesFilter.value;
@@ -540,12 +481,6 @@
                     }
                 });
             }
-
-            // Initial status update
-            updateRaceStatus();
-
-            // Update status every minute
-            setInterval(updateRaceStatus, 60000);
 
             // Add change event listeners to filter selects
             statusFilter.addEventListener('change', updateFilters);
